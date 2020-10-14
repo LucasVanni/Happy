@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 
 export default {
 
-    async index(request: Request, response: Response){
+    async index(_request: Request, response: Response){
 
         const orphanageRepository = getRepository(Orphanage);
 
@@ -62,7 +62,7 @@ export default {
 
         const schema = Yup.object().shape({
             name: Yup.string().required('Nome obrigatório'),
-            latitue: Yup.number().required(),
+            latitude: Yup.number().required(),
             longitude: Yup.number().required(),
             about: Yup.string().required().max(300),
             instructions: Yup.string().required(),
